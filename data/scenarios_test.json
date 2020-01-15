@@ -488,5 +488,215 @@
     },
     "expectedStatus": "400",
     "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "036. US - Account Number: Should save bank details if Account Number has 1 character",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "JohnCo",
+      "account_number": "1",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "037. US - Account Number: Should save bank details if Account Number has 1 character",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "JohnCo",
+      "account_number": "1234567890-87650A",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "038. US - Account Number: Should return error if Account Number is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "JohnCo",
+      "account_number": "",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_number' is required"
+  },
+  {
+    "description": "039. US - Account Number: Should return error if Account Number is more than 17 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "JohnCo",
+      "account_number": "1234567890-87650A!",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 1 and 17 when bank_country_code is 'US'"
+  },
+  {
+    "description": "040. US - Account Number: Should return error if Account Number is more than 17 characters including space",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "JohnCo",
+      "account_number": "1234567890-87650A",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 1 and 17 when bank_country_code is 'US'"
+  },
+  {
+    "description": "041. AU - Account Number: Should save bank details if Account Number has 6 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "JohnCo",
+      "account_number": "327891",
+      "swift_code": "",
+      "bsb": "088123",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "042. AU - Account Number: Should save bank details if Account Number has 9 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "JohnCo",
+      "account_number": "8898-4321",
+      "swift_code": "",
+      "bsb": "088123",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "043. AU - Account Number: Should return error if Account Number is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "JohnCo",
+      "account_number": "",
+      "swift_code": "",
+      "bsb": "088123",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_number' is required"
+  },
+  {
+    "description": "044. AU - Account Number: Should return error if Account Number is less than 6 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "JohnCo",
+      "account_number": "1234!",
+      "swift_code": "",
+      "bsb": "088123",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 6 and 9 when bank_country_code is 'AU'"
+  },
+  {
+    "description": "045. AU - Account Number: Should return error if Account Number is more than 9 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "JohnCo",
+      "account_number": "1234-56789",
+      "swift_code": "",
+      "bsb": "088123",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 6 and 9 when bank_country_code is 'AU'"
+  },
+  {
+    "description": "046. CN - Account Number: Should save bank details if Account Number has 8 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "JohnCo",
+      "account_number": "3278911A",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "047. CN - Account Number: Should save bank details if Account Number has 20 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "JohnCo",
+      "account_number": "8898-4321-0981-1111!",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "048. CN - Account Number: Should return error if Account Number is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "JohnCo",
+      "account_number": "",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_number' is required"
+  },
+  {
+    "description": "049. CN - Account Number: Should return error if Account Number is less than 8 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "JohnCo",
+      "account_number": "1234567",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 8 and 20 when bank_country_code is 'CN'"
+  },
+  {
+    "description": "050. CN - Account Number: Should return error if Account Number is more than 20 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "JohnCo",
+      "account_number": "8898-4321-0981-1111-0",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_number should be between 8 and 20 when bank_country_code is 'CN'"
   }
 ]
