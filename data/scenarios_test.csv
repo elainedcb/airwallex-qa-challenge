@@ -1,0 +1,36 @@
+﻿test_no,field_to_test,description,payment_method,bank_country_code,account_name,account_number,swift_code,bsb,aba,expected_status,expected_message
+001,Payment Method,Should save bank details if valid details are given for SWIFT,SWIFT,AU,Jam O'Clo,123456,ICBCAUBJ,123898,,200,Bank details saved
+002,Payment Method,Should save bank details if valid details are given for LOCAL,LOCAL,AU,Jam O'Clo,123456,,123898,,200,Bank details saved
+003,Payment Method,Should return error if payment method has no value,,AU,John Sam,123456,ICBCAUBJ,123898,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+004,Payment Method,Should return error if payment method SWIFT is in lowercase,swift,AU,John Sam,123456,ICBCAUBJ,123898,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+005,Payment Method,Should return error if payment method LOCAL is in lowercase,local,AU,Ash Lam,123456,,123898,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+006,Payment Method,Should return error if payment method is neither LOCAL or SWIFT,OTHER,AU,John Sam,123456,,123898,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+007,Payment Method,Should save bank details if valid details are given for SWIFT,SWIFT,US,Ke$ha,12345ab9893bc7-12,ICBCUSABC,,123456789,200,Bank details saved
+008,Payment Method,Should save bank details if valid details are given for LOCAL,LOCAL,US,Jim 3rd,00998761,,,123456789,200,Bank details saved
+009,Payment Method,Should return error if payment method SWIFT is in lowercase,swift,US,Will King,00998761,ICBCUSABC,,123456789,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+010,Payment Method,Should return error if payment method LOCAL is in lowercase,local,US,St. John,00998761,,,123456789,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+011,Payment Method,Should return error if payment method is neither LOCAL or SWIFT,OTHER,US,JohnSmith,00998761,,,123456789,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+012,Payment Method,Should return error if payment method has no value,,US,JohnSmith,00998761,,,123456789,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+013,Payment Method,Should save bank details if valid details are given for SWIFT,SWIFT,CN,Ke$ha,abc123456,QWERCNTY,,,200,Bank details saved
+014,Payment Method,Should save bank details if valid details are given for LOCAL,LOCAL,CN,Jim 3rd,12345678,,,,200,Bank details saved
+015,Payment Method,Should return error if payment method SWIFT is in lowercase,swift,CN,Will King,0908389392832-wk#019,QWERCNTY,,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+016,Payment Method,Should return error if payment method LOCAL is in lowercase,local,CN,St. John,12345678,,,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+017,Payment Method,Should return error if payment method is neither LOCAL or SWIFT,OTHER,CN,JohnSmith,12345678,,,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+018,Payment Method,Should return error if payment method has no value,,CN,JohnSmith,12345678,,,,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+019,Bank Country Code,Should return error if any other country code is the input bank_country_code,SWIFT,OTHER,Jam O'Clo,123456,ICBCOTBJ,,,400,"'bank_country_code' is required, and should be one of 'US', 'AU', or 'CN'"
+020,Bank Country Code,Should return error if bank_country_code is blank,SWIFT,,Jam O'Clo,123456,ICBCKRBJ,,,400,"'bank_country_code' is required, and should be one of 'US', 'AU', or 'CN'"
+021,Account Name,Should save bank details if account name has 2 character length,LOCAL,AU,js,123456,,123898,,200,Bank details saved
+022,Account Name,Should save bank details if account name has 10 character length with any character,SWIFT,AU,@bc1# test,123456,ICBCAUBJ,123898,,200,Bank details saved
+023,Account Name,Should return error if Account name is blank,LOCAL,AU,,123456,,123898,,400,'account_name' is required
+024,Account Name,Should return error if Account name is less than 2 characters,LOCAL,AU,a,123456,,123898,,400,Length of account_name should be between 2 and 10
+025,Account Name,Should return error if Account name is more than 10 characters,LOCAL,AU,ABCDEFGHIJK,123456,,123898,,400,Length of account_name should be between 2 and 10
+026,Account Name,Should save bank details if account name has 2 character length,LOCAL,US,js,00998761,,,123456789,200,Bank details saved
+027,Account Name,Should save bank details if account name has 10 character length with any character,SWIFT,US,@bc1# test,12345ab9893bc7-12,ICBCUSABC,,123456789,200,Bank details saved
+028,Account Name,Should return error if Account name is blank,LOCAL,US,,00998761,,,123456789,400,'account_name' is required
+029,Account Name,Should return error if Account name is less than 2 characters,LOCAL,US,a,00998761,,,123456789,400,Length of account_name should be between 2 and 10
+030,Account Name,Should return error if Account name is more than 10 characters,LOCAL,US,ABCDEFGHIJK,00998761,,,123456789,400,Length of account_name should be between 2 and 10
+031,Account Name,Should save bank details if account name has 2 character length,LOCAL,CN,js,12345678,,,,200,Bank details saved
+032,Account Name,Should save bank details if account name has 10 character length with any character,SWIFT,CN,@bc1# test,abc123456,QWERCNTY,,,200,Bank details saved
+033,Account Name,Should return error if Account name is blank,LOCAL,CN,,00998761,,,,400,'account_name' is required
+034,Account Name,Should return error if Account name is less than 2 characters,LOCAL,CN,a,00998761,,,,400,Length of account_name should be between 2 and 10
+035,Account Name,Should return error if Account name is more than 10 characters,LOCAL,CN,ABCDEFGHIJK,00998761,,,,400,Length of account_name should be between 2 and 10

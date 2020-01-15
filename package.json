@@ -1,0 +1,25 @@
+{
+  "name": "airwallex-qa-challenge",
+  "version": "1.0.0",
+  "description": "API Test Framework for Save Bank Details",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --opts ./mocha.opts",
+    "test-st": "cross-env NODE_ENV=test mocha --opts ./mocha.opts -g 'Functional'",
+    "generate-scenarios-test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts -g 'DataGenerator'"
+  },
+  "author": "elainedcb",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "chai-json-schema": "^1.5.1",
+    "cross-env": "^6.0.3",
+    "csvtojson": "^2.0.10",
+    "deep-equal-in-any-order": "^1.0.21",
+    "mocha": "^6.2.2",
+    "path": "^0.12.7",
+    "superagent": "^5.1.2",
+    "superagent-proxy": "^2.0.0"
+  }
+}

@@ -1,0 +1,492 @@
+[
+  {
+    "description": "001. AU - Payment Method: Should save bank details if valid details are given for SWIFT",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "AU",
+      "account_name": "Jam O'Clo",
+      "account_number": "123456",
+      "swift_code": "ICBCAUBJ",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "002. AU - Payment Method: Should save bank details if valid details are given for LOCAL",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "Jam O'Clo",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "003. AU - Payment Method: Should return error if payment method has no value",
+    "requestData": {
+      "payment_method": "",
+      "bank_country_code": "AU",
+      "account_name": "John Sam",
+      "account_number": "123456",
+      "swift_code": "ICBCAUBJ",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "004. AU - Payment Method: Should return error if payment method SWIFT is in lowercase",
+    "requestData": {
+      "payment_method": "swift",
+      "bank_country_code": "AU",
+      "account_name": "John Sam",
+      "account_number": "123456",
+      "swift_code": "ICBCAUBJ",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "005. AU - Payment Method: Should return error if payment method LOCAL is in lowercase",
+    "requestData": {
+      "payment_method": "local",
+      "bank_country_code": "AU",
+      "account_name": "Ash Lam",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "006. AU - Payment Method: Should return error if payment method is neither LOCAL or SWIFT",
+    "requestData": {
+      "payment_method": "OTHER",
+      "bank_country_code": "AU",
+      "account_name": "John Sam",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "007. US - Payment Method: Should save bank details if valid details are given for SWIFT",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "US",
+      "account_name": "Ke$ha",
+      "account_number": "12345ab9893bc7-12",
+      "swift_code": "ICBCUSABC",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "008. US - Payment Method: Should save bank details if valid details are given for LOCAL",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "Jim 3rd",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "009. US - Payment Method: Should return error if payment method SWIFT is in lowercase",
+    "requestData": {
+      "payment_method": "swift",
+      "bank_country_code": "US",
+      "account_name": "Will King",
+      "account_number": "00998761",
+      "swift_code": "ICBCUSABC",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "010. US - Payment Method: Should return error if payment method LOCAL is in lowercase",
+    "requestData": {
+      "payment_method": "local",
+      "bank_country_code": "US",
+      "account_name": "St. John",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "011. US - Payment Method: Should return error if payment method is neither LOCAL or SWIFT",
+    "requestData": {
+      "payment_method": "OTHER",
+      "bank_country_code": "US",
+      "account_name": "JohnSmith",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "012. US - Payment Method: Should return error if payment method has no value",
+    "requestData": {
+      "payment_method": "",
+      "bank_country_code": "US",
+      "account_name": "JohnSmith",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "013. CN - Payment Method: Should save bank details if valid details are given for SWIFT",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "CN",
+      "account_name": "Ke$ha",
+      "account_number": "abc123456",
+      "swift_code": "QWERCNTY",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "014. CN - Payment Method: Should save bank details if valid details are given for LOCAL",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "Jim 3rd",
+      "account_number": "12345678",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "015. CN - Payment Method: Should return error if payment method SWIFT is in lowercase",
+    "requestData": {
+      "payment_method": "swift",
+      "bank_country_code": "CN",
+      "account_name": "Will King",
+      "account_number": "0908389392832-wk#019",
+      "swift_code": "QWERCNTY",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "016. CN - Payment Method: Should return error if payment method LOCAL is in lowercase",
+    "requestData": {
+      "payment_method": "local",
+      "bank_country_code": "CN",
+      "account_name": "St. John",
+      "account_number": "12345678",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "017. CN - Payment Method: Should return error if payment method is neither LOCAL or SWIFT",
+    "requestData": {
+      "payment_method": "OTHER",
+      "bank_country_code": "CN",
+      "account_name": "JohnSmith",
+      "account_number": "12345678",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "018. CN - Payment Method: Should return error if payment method has no value",
+    "requestData": {
+      "payment_method": "",
+      "bank_country_code": "CN",
+      "account_name": "JohnSmith",
+      "account_number": "12345678",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
+  },
+  {
+    "description": "019. OTHER - Bank Country Code: Should return error if any other country code is the input bank_country_code",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "OTHER",
+      "account_name": "Jam O'Clo",
+      "account_number": "123456",
+      "swift_code": "ICBCOTBJ",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'bank_country_code' is required, and should be one of 'US', 'AU', or 'CN'"
+  },
+  {
+    "description": "020.  - Bank Country Code: Should return error if bank_country_code is blank",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "",
+      "account_name": "Jam O'Clo",
+      "account_number": "123456",
+      "swift_code": "ICBCKRBJ",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'bank_country_code' is required, and should be one of 'US', 'AU', or 'CN'"
+  },
+  {
+    "description": "021. AU - Account Name: Should save bank details if account name has 2 character length",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "js",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "022. AU - Account Name: Should save bank details if account name has 10 character length with any character",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "AU",
+      "account_name": "@bc1# test",
+      "account_number": "123456",
+      "swift_code": "ICBCAUBJ",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "023. AU - Account Name: Should return error if Account name is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_name' is required"
+  },
+  {
+    "description": "024. AU - Account Name: Should return error if Account name is less than 2 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "a",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "025. AU - Account Name: Should return error if Account name is more than 10 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "ABCDEFGHIJK",
+      "account_number": "123456",
+      "swift_code": "",
+      "bsb": "123898",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "026. US - Account Name: Should save bank details if account name has 2 character length",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "js",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "027. US - Account Name: Should save bank details if account name has 10 character length with any character",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "US",
+      "account_name": "@bc1# test",
+      "account_number": "12345ab9893bc7-12",
+      "swift_code": "ICBCUSABC",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "028. US - Account Name: Should return error if Account name is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_name' is required"
+  },
+  {
+    "description": "029. US - Account Name: Should return error if Account name is less than 2 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "a",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "030. US - Account Name: Should return error if Account name is more than 10 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "US",
+      "account_name": "ABCDEFGHIJK",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": "123456789"
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "031. CN - Account Name: Should save bank details if account name has 2 character length",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "js",
+      "account_number": "12345678",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "032. CN - Account Name: Should save bank details if account name has 10 character length with any character",
+    "requestData": {
+      "payment_method": "SWIFT",
+      "bank_country_code": "CN",
+      "account_name": "@bc1# test",
+      "account_number": "abc123456",
+      "swift_code": "QWERCNTY",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "033. CN - Account Name: Should return error if Account name is blank",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "'account_name' is required"
+  },
+  {
+    "description": "034. CN - Account Name: Should return error if Account name is less than 2 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "a",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  },
+  {
+    "description": "035. CN - Account Name: Should return error if Account name is more than 10 characters",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "CN",
+      "account_name": "ABCDEFGHIJK",
+      "account_number": "00998761",
+      "swift_code": "",
+      "bsb": "",
+      "aba": ""
+    },
+    "expectedStatus": "400",
+    "expectedMessage": "Length of account_name should be between 2 and 10"
+  }
+]
