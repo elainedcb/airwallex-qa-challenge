@@ -98,3 +98,4 @@
 097,ABA,Should save bank details if ABA is invalid but for non US country code,SWIFT,AU,Term,11111111,12-4AU7811,888000,,200,Bank details saved
 098,ABA,Should save bank details if ABA is invalid but for non US country code,SWIFT,CN,Personal,09802829,12-4CN7811,,,200,Bank details saved
 099,BSB & ABA,Should save bank details if ABA and BSB are blank for CN country code,LOCAL,CN,Personal,09802829,,,,200,Bank details saved
+100,Swift Code,Should save bank details if payment method is LOCAL but swift code is invalid,LOCAL,AU,Personal,09802829,ABCDUS1J,923101,,200,Bank details saved

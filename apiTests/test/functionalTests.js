@@ -1,9 +1,9 @@
-describe("Functional Tests: Save Bank Details Tests", () => {
+describe("Functional Tests: Save Bank Details Tests", function() {
   const scenarios = require(`${__root}/data/scenarios_${env}.json`);
   const bankMethods = require(`${__root}/methods/bankMethods`);
 
   scenarios.forEach(scenario => {
-    it(`Test Bank Details: ${scenario.description}`, async () => {
+    it(`Test Bank Details: ${scenario.description}`, async function() {
       let expectedStatus = parseInt(scenario.expectedStatus);
       let expectedMessage = scenario.expectedMessage;
       let expectedResponse = bankMethods.generateExpectedResponse(
@@ -11,6 +11,11 @@ describe("Functional Tests: Save Bank Details Tests", () => {
         expectedMessage
       );
       let response = await bankMethods.saveBankDetails(scenario.requestData);
+
+      addContext(this, {
+        title: "Payload Request",
+        value: scenario.requestData
+      });
 
       console.log("Expected Response", expectedResponse);
       console.log("Actual Response", response.body);

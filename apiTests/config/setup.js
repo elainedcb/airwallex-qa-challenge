@@ -10,6 +10,7 @@ chai.request.Request = chai.request.Test;
 require("superagent-proxy")(chai.request);
 chai.use(require("chai-json-schema"));
 chai.use(require("deep-equal-in-any-order"));
+global.addContext = require("mochawesome/addContext");
 
 global.__root = path.resolve(__dirname, "..");
 global.env = process.env.NODE_ENV;

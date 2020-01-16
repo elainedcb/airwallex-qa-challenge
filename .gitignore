@@ -1,5 +1,8 @@
 # Dependency directories
 node_modules/
 
+# custom ignores
 package-lock.json
 .vscode/
+**/mochaawesome-report/
+.DS_Store

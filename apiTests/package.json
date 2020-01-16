@@ -19,6 +19,8 @@
     "csvtojson": "^2.0.10",
     "deep-equal-in-any-order": "^1.0.21",
     "mocha": "^6.2.2",
+    "mochawesome": "^4.1.0",
+    "mochawesome-report-generator": "^4.1.0",
     "path": "^0.12.7",
     "superagent": "^5.1.2",
     "superagent-proxy": "^2.0.0"

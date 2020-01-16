@@ -7,6 +7,11 @@ const writeJsonFile = (json, fileName) => {
 
 const convertScenariosCsvToJson = async () => {
   let env = process.env.NODE_ENV;
+
+  console.log(
+    `----- GENERATING TEST DATA FOR ${env.toUpperCase()} ENVIRONMENT -----`
+  );
+
   let scenarioCsvPath = `./data/scenarios_${env}.csv`;
 
   let scenarios = [];
@@ -33,6 +38,8 @@ const convertScenariosCsvToJson = async () => {
   });
 
   writeJsonFile(scenarios, `../apiTests/data/scenarios_${env}.json`);
+
+  console.log(`----- TEST DATA GENERATION COMPLETED -----`);
 };
 
 convertScenariosCsvToJson();

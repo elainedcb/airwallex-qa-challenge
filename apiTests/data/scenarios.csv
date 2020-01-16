@@ -1,9 +1,0 @@
-﻿description,payment_method,bank_country_code,account_name,account_number,swift_code,bsb,expected_status,expected_message
-test 1,SWIFT,AU,Jamie'son O'Clock,123456,ICBCAUBJ,123898,200,Bank Details Saved
-test 2,LOCAL,AU,Jamie'son O'Clock,123456,ICBCAUBJ,123898,200,Bank Details Saved
-test 3,LOCAL,AU,Larry Smith 3rd,987654899,RDMCAUBJAU,B12345,200,Bank Details Saved
-test 4,SWIFT,AU,Larry Smith 3rd,987654899,RDMCAUBJAU,B12345,200,Bank Details Saved
-test 5,SWIFT,AU,William King,12345,ICBCAUBJ,089765,200,Bank Details Saved
-test 6,SWIFT,AU,Selana Lopes,,,,200,Bank Details Saved
-test 7,swift,AU,Jamie'son O'Clock,123456,ICBCAUBJ,123898,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"
-test 8,local,AU,Jamie'son O'Clock,123456,ICBCAUBJ,123898,400,"'payment_method' field required, the value should be either 'LOCAL' or 'SWIFT'"

@@ -1384,5 +1384,19 @@
     },
     "expectedStatus": "200",
     "expectedMessage": "Bank details saved"
+  },
+  {
+    "description": "100. AU - Swift Code: Should save bank details if payment method is LOCAL but swift code is invalid",
+    "requestData": {
+      "payment_method": "LOCAL",
+      "bank_country_code": "AU",
+      "account_name": "Personal",
+      "account_number": "09802829",
+      "swift_code": "ABCDUS1J",
+      "bsb": "923101",
+      "aba": ""
+    },
+    "expectedStatus": "200",
+    "expectedMessage": "Bank details saved"
   }
 ]
