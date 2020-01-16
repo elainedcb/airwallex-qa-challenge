@@ -1,0 +1,3 @@
+Observations/Suggestions
+1. Is there a way to validate the backend to see if the details are saved?
+2. In terms of fields not required for a country code, are these being ignored when saved? e.g either bsb or aba is required for CN

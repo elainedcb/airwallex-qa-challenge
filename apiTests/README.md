@@ -21,9 +21,10 @@ _Note: Make sure to generate the scenarios first using dataGenerator runner befo
 
 1.  _config_ - This folder contains the environment and setup file for global variables.
 2.  _data_ - This is where the scenarios json file are located for use in testing generated from the data generator runner (dataGenerator)
-3.  _methods_ - This folder contains the helper methods and other common methods that are utilised across the tests.
-4.  _mochawesome-report_ - This folder is automatically generated whenever tests are completed. This contains the test reports.
-5.  _test_ - This folder contains all the automated test cases
+3.  _findings_ - All recorded defects, observations or suggestions are in this folder
+4.  _methods_ - This folder contains the helper methods and other common methods that are utilised across the tests.
+5.  _mochawesome-report_ - This folder is automatically generated whenever tests are completed. This contains the test reports.
+6.  _test_ - This folder contains all the automated test cases
 
 ## Adding new environment
 
