@@ -1,0 +1,17 @@
+{
+  "name": "datagenerator",
+  "version": "1.0.0",
+  "description": "Bank Details Test Data Generator",
+  "main": "index.js",
+  "scripts": {
+    "generate-tests-preview": "cross-env NODE_ENV=preview node ./index.js",
+    "generate-tests-demo": "cross-env NODE_ENV=demo node ./index.js"
+  },
+  "author": "elainedcb",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^6.0.3",
+    "csvtojson": "^2.0.10",
+    "fs": "0.0.1-security"
+  }
+}

@@ -4,9 +4,10 @@
   "description": "API Test Framework for Save Bank Details",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --opts ./mocha.opts",
-    "test-st": "cross-env NODE_ENV=test mocha --opts ./mocha.opts -g 'Functional'",
-    "generate-scenarios-test": "cross-env NODE_ENV=test mocha --opts ./mocha.opts -g 'DataGenerator'"
+    "test-preview": "cross-env NODE_ENV=preview mocha --opts ./mocha.opts -g 'Functional'",
+    "generate-tests-preview": "cross-env NODE_ENV=preview mocha --opts ./mocha.opts -g 'DataGenerator'",
+    "test-demo": "cross-env NODE_ENV=demo mocha --opts ./mocha.opts -g 'Functional'",
+    "generate-tests-demo": "cross-env NODE_ENV=demo mocha --opts ./mocha.opts -g 'DataGenerator'"
   },
   "author": "elainedcb",
   "license": "ISC",
