@@ -26,7 +26,7 @@ _Note: Make sure to generate the scenarios first using dataGenerator runner befo
 5.  _mochawesome-report_ - This folder is automatically generated whenever tests are completed. This contains the test reports.
 6.  _test_ - This folder contains all the automated test cases
 
-## Adding new environment
+## Adding a new environment
 
 If a new environment is created for testing, add the information and url in the config/env.json file.
 
